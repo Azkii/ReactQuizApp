@@ -1,0 +1,100 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+body {
+    background-color: #363636;
+    color: whitesmoke;
+}
+.header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: #292929;
+    box-shadow: 0 0 5px 2px rgba(19, 19, 19, 0.4);
+    padding: 0 2rem;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem;
+}
+.form-group > label {
+    opacity: 0.9;
+    font-size: 0.8rem;
+    margin-bottom: 0.2rem;
+}
+.submitBtn {
+    background-color: whitesmoke;
+    border: none;
+    width: 150px;
+    height: 40px;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 23px;
+    cursor: pointer;
+    outline: none;
+    opacity: 0.9;
+}
+.submitBtn:hover {
+    opacity: 1;
+}
+.cardContainer {
+    max-width: 1000px;
+    margin: 2rem 2rem;
+}
+.card-grid {
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+}
+.card {
+    background-color: #292929;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 2px rgba(19, 19, 19, 0.4);
+    transition: ease all 0.4s;
+    transform-style: preserve-3d;
+    transform: 
+        perspective(800px) 
+        rotateY(var(--rotate-y, 0))
+        translateY(var(--translate-y,0));
+    cursor: pointer;
+}
+.card:hover {
+    --translate-y: -5px;
+    box-shadow: 0 0 5px 2px rgba(19, 19, 19, 0.6);
+}
+.card.fliped {
+    --rotate-y: 180deg;
+}
+.card .frontSide,
+.card .backSide {
+    position: absolute;
+    padding: 25px;
+    backface-visibility: hidden;
+    width: 100%;
+}
+.card .backSide {
+    transform: rotateY(180deg);
+    text-align: center;
+}
+.frontSide > h1{
+    font-size: 25px;
+    width: 100%;
+    text-align: center;
+    color: rgb(255, 72, 133);
+}
+.flashCardOptions {
+    margin-top: 20px;
+}
+.flashCardOption {
+    margin-top: 10px;
+}
