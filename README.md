@@ -1,6 +1,7 @@
 # Quiz app *`only Frontend`*
 Technologies:
   - React
+  - Rest api
 </br>
 <p>
   Data </br>
